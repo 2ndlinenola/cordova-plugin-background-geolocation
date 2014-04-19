@@ -36,6 +36,13 @@ module.exports = {
             'finish',
             []);  
     },
+    isRunning: function(success, failure) {
+        exec(success || function() {},
+            failure || function() {},
+            'BackgroundGeoLocation',
+            'isRunning',
+            []);
+    },
     changePace: function(isMoving, success, failure) {
         exec(success || function() {},
             failure || function() {},
