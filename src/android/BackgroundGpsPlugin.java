@@ -2,6 +2,7 @@ package com.tenforwardconsulting.cordova.bgloc;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -81,7 +82,7 @@ public class BackgroundGpsPlugin extends CordovaPlugin {
             callbackContext.success();
         } else if (ACTION_IS_RUNNING.equalsIgnoreCase(action)) {
           result = true;
-          callbackContext.success(isEnabled);
+          callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, isEnabled));
         }
 
         return result;
