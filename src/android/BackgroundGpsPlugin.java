@@ -80,7 +80,8 @@ public class BackgroundGpsPlugin extends CordovaPlugin {
             // TODO reconfigure Service
             callbackContext.success();
         } else if (ACTION_IS_RUNNING.equalsIgnoreCase(action)) {
-          result = isEnabled;
+          result = true;
+          callbackContext.success(isEnabled);
         }
 
         return result;
