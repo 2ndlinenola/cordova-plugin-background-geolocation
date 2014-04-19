@@ -189,6 +189,14 @@
     
 }
 /**
+ * isRunning?
+ */
+- (void) isRunning:(CDVInvokedUrlCommand*)command
+{
+    CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:enabled];
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
+/**
  * Change pace to moving/stopped
  * @param {Boolean} isMoving
  */
